@@ -19,7 +19,7 @@ function FoundItems() {
     controllerAs: 'narrow',
     bindToController: true
   };
-console.log(ddo);
+
   return ddo;
 }
 
@@ -32,7 +32,8 @@ console.log(ddo);
   
     var narrow = this;
     narrow.searchTerm="";
-    narrow.items=[];
+    narrow.items=undefined;
+    narrow.msg="";
 
     //narrow.items= MenuSearchService.getMachedMenuItems();
 
@@ -51,7 +52,10 @@ console.log(ddo);
         });
    
       }
-      else console.log("Error no hay nada a buscar") 
+      else {
+        narrow.msg="Nothing found";
+        narrow.items=[];
+      }
     } //end findToMe
 
     narrow.delete=function(indexItem){
