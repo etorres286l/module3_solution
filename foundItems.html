@@ -1,0 +1,11 @@
+<div>
+	<ul>
+        <li ng-repeat="item in narrow.found">
+          {{ item.short_name }}.{{ item.name }} --> {{ item.description }} 
+          <button class="btn btn-primary" ng-click="narrow.delete($index);">Don't want this one!</button>
+          
+        </li>
+    </ul>
+</div>
+
+
