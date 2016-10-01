@@ -32,12 +32,16 @@ function FoundItems() {
   
     var narrow = this;
     narrow.searchTerm="";
-    narrow.items=undefined;
-    narrow.msg="";
+    narrow.items=[];
+   
+  
 
     //narrow.items= MenuSearchService.getMachedMenuItems();
 
     narrow.findToMe = function () {
+     
+
+
       if (narrow.searchTerm!==""){
        
         var promise=MenuSearchService.getMachedMenuItems(narrow.searchTerm.toLowerCase().trim());
@@ -53,17 +57,20 @@ function FoundItems() {
    
       }
       else {
-        narrow.msg="Nothing found";
-        narrow.items=[];
+               narrow.items=[];
+               
       }
     } //end findToMe
 
     narrow.delete=function(indexItem){
       narrow.items.splice(indexItem, 1);
     }
+
     narrow.nothing=function(){
-      if (narrow.items.length==0) return true
+     
+        if (narrow.items.length==0) return true
         else return false;
+  
     }
  		
 	} //end NarrowItDownController
