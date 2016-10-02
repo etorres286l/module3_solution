@@ -25,6 +25,7 @@
 
     <!-- found-items should be implemented as a component -->
     <found-items items="narrow.items" on-remove="narrow.delele($index)"></found-items>
+    <div ng-if="narrow.nothing()&&!narrow.first;"><h3>Nothing found</h3></div>
    
   </div>
   <script src="js/angular.min.js"></script>

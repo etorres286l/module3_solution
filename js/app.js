@@ -33,6 +33,7 @@ function FoundItems() {
     var narrow = this;
     narrow.searchTerm="";
     narrow.items=[];
+    narrow.first=true;
    
   
 
@@ -40,7 +41,8 @@ function FoundItems() {
 
     narrow.findToMe = function () {
      
-
+      narrow.first=false;
+     
 
       if (narrow.searchTerm!==""){
        
@@ -58,6 +60,7 @@ function FoundItems() {
       }
       else {
                narrow.items=[];
+
                
       }
     } //end findToMe
@@ -67,10 +70,10 @@ function FoundItems() {
     }
 
     narrow.nothing=function(){
-     
+      
         if (narrow.items.length==0) return true
         else return false;
-  
+    
     }
  		
 	} //end NarrowItDownController
